@@ -1,0 +1,133 @@
+/* BookDetailPage.css */
+
+/* Parent container */
+.book-detail-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;  /* Add relative positioning to allow absolute positioning of modal */
+}
+
+/* Book info section */
+.book-info {
+    flex: 1;
+    text-align: center;
+}
+
+/* Inventory section */
+.inventory-section {
+    flex: 1;
+    padding-left: 40px;
+}
+
+/* Modal styling - new */
+.modal {
+    position: absolute;
+    top: 50%;  /* Adjust this to control how high/low the modal appears */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust position to perfect center based on top/left */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 10;  /* Ensure the modal is on top of other elements */
+}
+
+/* Modal button container */
+.modal .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Modal button styles */
+.modal button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal .btn-continue {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal .btn-cancel {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Inventory table */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-table th,
+.inventory-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.inventory-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Truncate ID to fit within the column */
+.id-column {
+    width: 120px;  /* Adjust width to fit 8-character IDs */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Buttons for borrow and return */
+.inventory-table .borrow-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.inventory-table .return-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.inventory-table .borrow-button:hover {
+    background-color: #0056b3;
+}
+
+.inventory-table .return-button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .book-detail-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inventory-section {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .book-image {
+        max-width: 250px;
+    }
+}

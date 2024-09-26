@@ -1,0 +1,58 @@
+/* Center the entire profile page with reduced max-width */
+.profile-page {
+    padding: 20px;
+    max-width: 1200px;  /* 擴大最大寬度以適應三本書 */
+    margin: 0 auto;
+}
+
+/* Profile section */
+.profile-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Borrowed books section */
+.borrowed-books-section {
+    text-align: center;
+}
+
+/* Grid Layout */
+.borrowed-books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 一行顯示三本書 */
+    gap: 20px;  /* 書籍之間的間隔 */
+    justify-items: center;  /* 確保書籍卡片居中 */
+    padding: 20px 0;
+}
+
+/* Book card styling */
+.borrowed-book {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    width: 220px;  /* 調整卡片寬度以便在一行容納三本書 */
+}
+
+/* Book image styling */
+.book-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Title and loan date styling */
+.borrowed-book p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.borrowed-book strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000;
+}
