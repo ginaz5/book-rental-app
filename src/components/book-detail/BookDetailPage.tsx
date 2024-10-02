@@ -103,14 +103,16 @@ const BookDetailPage: React.FC = () => {
                 inventoryId: currentInventoryId,
                 userId,  // Use the stored userId
             });
-            fetchBookDetails();  // Refresh the book details and inventory after action
+            await fetchBookDetails();  // Refresh the book details and inventory after action
             closeActionModal();  // Close action modal
-        } catch (error: any) {
-            // Check if the error response exists and has a message from the backend
-            if (error.response && error.response.data) {
-                setBackendError(error.response.data);  // Capture the backend error message
+        } catch (error) {
+            // Check if the error response exists and follows the expected format
+            if (error.response && error.response.data && error.response.data.errors) {
+                // Extract the first error message from the array
+                const backendErrorMessage = error.response.data.errors[0];
+                setBackendError(backendErrorMessage);  // Set the error message
             } else {
-                setBackendError('An unexpected error occurred.');
+                setBackendError('An unexpected error occurred.');  // Fallback for unexpected errors
             }
             closeActionModal();  // Close action modal after error
             setIsErrorModalOpen(true);  // Open error modal
